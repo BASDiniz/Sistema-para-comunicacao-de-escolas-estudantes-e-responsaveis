@@ -51,7 +51,7 @@ Given ("Eu estou na pagina de cadastro de uma escola nova") do
 end
 
 When("Eu faco o cadastro de uma escola com o nome {string}, cpf do administrador {string}, numero de estudantes {string}, numero de series {string}, numero de turmas {string} e numero de professores {string}") do |nome, cpf, num1, num2, num3, num4|
-    fill_in 'escola[nome]', :with => cpf
+    fill_in 'escola[nome]', :with => nome
     fill_in 'escola[cpf_do_administrador]', :with => cpf
     fill_in 'escola[numero_de_estudantes]', :with => num1
     fill_in 'escola[numero_de_series]', :with => num2
