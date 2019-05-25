@@ -13,7 +13,7 @@ Feature: Escola
     When Eu clico para visualizar a escola de nome "Escola1"
     Then Eu visualizo a escola de nome "Escola1"
 
-  Scenario: Tentar cadastrar uma Escola todos os campos em branco
+  Scenario: Tentar cadastrar uma Escola com todos os campos em branco
     Given Eu estou na pagina de cadastro de uma escola nova
     When Eu faco o cadastro de uma escola com o nome "", cpf do administrador "", numero de estudantes "", numero de series "", numero de turmas "" e numero de professores ""
     Then Eu vejo "8" mensagens de erro
@@ -22,4 +22,4 @@ Feature: Escola
     Given Eu estou na pagina que lista todas as escolas
     And Eu clico para editar a escola de nome "Escola1"
     When Eu insiro o novo nome "EscolaAtt1" e clico para atualizar a escola
-    Then Eu vejo que a escola de nome "EscolaAtt1"foi atualizada corretamente
+    Then Eu vejo que o nome da escola foi atualizado corretamente para "EscolaAtt1"

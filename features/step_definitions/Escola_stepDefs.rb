@@ -43,11 +43,11 @@ Then("Eu visualizo a escola de nome {string}") do |string|
    expect(page).to have_content(string)
 end
 
-Given ("Eu estou na pagina de cadastro de uma escola nova") do
+Given("Eu estou na pagina de cadastro de uma escola nova") do
     visit escolas_path
     expect(page).to have_content("Escolas")
     page.has_link?("New Escola")
-    click_link ("New Escola")
+    click_link("New Escola")
 end
 
 When("Eu faco o cadastro de uma escola com o nome {string}, cpf do administrador {string}, numero de estudantes {string}, numero de series {string}, numero de turmas {string} e numero de professores {string}") do |nome, cpf, num1, num2, num3, num4|
@@ -65,7 +65,7 @@ Then("Eu vejo {string} mensagens de erro") do |string|
     assert_selector('div#error_explanation')
     expect(page).to have_content string
 end
-Given ("Eu estou na pagina que lista todas as escolas") do
+Given("Eu estou na pagina que lista todas as escolas") do
   visit escolas_path
   expect(page).to have_content('Escolas')
 end
@@ -87,7 +87,7 @@ When("Eu insiro o novo nome {string} e clico para atualizar a escola") do |strin
     click_button 'Update Escola'
 end
 
-Then("Eu vejo que a escola de nome {string}foi atualizada corretamente") do |string|
+Then("Eu vejo que o nome da escola foi atualizado corretamente para {string}") do |string|
     expect(page).to have_content string
 end
 
