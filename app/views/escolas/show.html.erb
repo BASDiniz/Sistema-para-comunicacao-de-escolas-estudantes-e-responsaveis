@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @escola.nome %>
+</p>
+
+<p>
+  <strong>Cpf do administrador:</strong>
+  <%= @escola.cpf_do_administrador %>
+</p>
+
+<p>
+  <strong>Numero de estudantes:</strong>
+  <%= @escola.numero_de_estudantes %>
+</p>
+
+<p>
+  <strong>Numero de series:</strong>
+  <%= @escola.numero_de_series %>
+</p>
+
+<p>
+  <strong>Numero de turmas:</strong>
+  <%= @escola.numero_de_turmas %>
+</p>
+
+<p>
+  <strong>Numero de professores:</strong>
+  <%= @escola.numero_de_professores %>
+</p>
+
+<%= link_to 'Edit', edit_escola_path(@escola) %> |
+<%= link_to 'Back', escolas_path %>
