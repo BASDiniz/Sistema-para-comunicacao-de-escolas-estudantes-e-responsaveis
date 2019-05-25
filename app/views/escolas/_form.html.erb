@@ -1,0 +1,47 @@
+<%= form_with(model: escola, local: true) do |form| %>
+  <% if escola.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(escola.errors.count, "error") %> prohibited this escola from being saved:</h2>
+
+      <ul>
+      <% escola.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :escola_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf_do_administrador %>
+    <%= form.text_field :cpf_do_administrador, id: :escola_cpf_do_administrador %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_de_estudantes %>
+    <%= form.number_field :numero_de_estudantes, id: :escola_numero_de_estudantes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_de_series %>
+    <%= form.number_field :numero_de_series, id: :escola_numero_de_series %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_de_turmas %>
+    <%= form.number_field :numero_de_turmas, id: :escola_numero_de_turmas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_de_professores %>
+    <%= form.number_field :numero_de_professores, id: :escola_numero_de_professores %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
