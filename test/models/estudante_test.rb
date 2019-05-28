@@ -10,4 +10,9 @@ class EstudanteTest < ActiveSupport::TestCase
       estudante = Estudante.new nome: '', cpf: '', serie: '', turma: ''
       assert_not estudante.save
   end
+
+  test 'Deve ser possivel salvar um estudante com todos os campos preenchidos corretamente' do
+      estudante = Estudante.new nome: 'Bruno', cpf: '12345678901', serie: '8ª', turma: 'A'
+      assert estudante.save
+  end
 end
