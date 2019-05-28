@@ -91,3 +91,24 @@ Then("Eu vejo que o nome da escola foi atualizado corretamente para {string}") d
     expect(page).to have_content string
 end
 
+Given ("Eu estou na pagina que lista as escolas") do
+    visit escolas_path
+    expect(page).to have_content('Escolas')
+end
+When("Eu clico para apagar a escola de nome {string}") do |string|
+    click_link 'New Escola'
+    fill_in 'escola[nome]', :with => string
+    fill_in 'escola[cpf_do_administrador]', :with => '12345678910'
+    fill_in 'escola[numero_de_estudantes]', :with => '1'
+    fill_in 'escola[numero_de_series]', :with => '1'
+    fill_in 'escola[numero_de_turmas]', :with => '1'
+    fill_in 'escola[numero_de_professores]', :with => '5'
+    click_button 'Create Escola'
+    click_link 'Back'
+    click_link 'Destroy'
+end
+
+Then("Eu confirmo a acao e vejo que a escola de nome {string} foi apagada") do |string|
+    expect(page).to have_no_content(string)
+    expect(page).to have_content('destroyed')
+end
