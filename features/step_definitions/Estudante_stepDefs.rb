@@ -38,3 +38,24 @@ end
 Then ('Eu vejo o estudante que possui o cpf {string}') do |cpf|
     expect(page).to have_content(cpf)
 end
+
+And ('Eu clico para editar o estudante que possui cpf {string}') do |cpf|
+    click_link 'New Estudante'
+    fill_in 'estudante[nome]', :with => 'Teste'
+    fill_in 'estudante[cpf]', :with => cpf
+    fill_in 'estudante[serie]', :with => '8ª'
+    fill_in 'estudante[turma]', :with => 'A'
+    click_button 'Create Estudante'
+    click_link 'Back'
+    click_link 'Edit'
+end
+
+When ('Eu preencho o campo da nova serie com {string} e clico para salvar as alteracoes') do |serie|
+    fill_in 'estudante[serie]', :with => serie
+    click_button 'Update Estudante'
+end
+
+Then ('Eu vejo que a serie do estudante de cpf {string} foi atualizada corretamente para {string}') do |cpf, serie|
+    expect(page).to have_content(cpf)
+    expect(page).to have_content(serie)
+end
