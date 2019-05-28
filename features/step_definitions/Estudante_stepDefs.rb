@@ -59,3 +59,7 @@ Then ('Eu vejo que a serie do estudante de cpf {string} foi atualizada corretame
     expect(page).to have_content(cpf)
     expect(page).to have_content(serie)
 end
+
+Then ('Eu vejo uma mensagem de erro {string}') do |error|
+    expect(page).to have_content(error)
+end
