@@ -63,3 +63,4 @@ end
 Then ('Eu vejo uma mensagem de erro {string}') do |error|
     expect(page).to have_content(error)
 end
+
