@@ -1,0 +1,27 @@
+<%= form_with(model: turma, local: true) do |form| %>
+  <% if turma.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(turma.errors.count, "error") %> prohibited this turma from being saved:</h2>
+
+      <ul>
+      <% turma.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= select("turma", "nome", ['A', 'B', 'C', 'D', 'E'], {include_blank: true}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ano_id %>
+    <%= form.collection_select(:ano_id, Ano.all, :id, :nome, {include_blank: true}) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
