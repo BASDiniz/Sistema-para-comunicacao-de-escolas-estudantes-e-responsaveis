@@ -23,3 +23,8 @@ Feature: Escola
     And Eu clico para editar a escola de nome "Escola1"
     When Eu insiro o novo nome "EscolaAtt1" e clico para atualizar a escola
     Then Eu vejo que o nome da escola foi atualizado corretamente para "EscolaAtt1"
+
+  Scenario: Apagar uma escola
+    Given Eu estou na pagina de listagem de escolas
+    When Eu clico para apagar a escola de nome "EscolaAtt1"
+    Then Eu confirmo a acao e vejo que a escola de nome "EscolaAtt1" foi apagada
