@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :estudantes
   resources :turmas
   resources :escolas
   resources :anos

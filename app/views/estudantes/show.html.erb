@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @estudante.nome %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @estudante.cpf %>
+</p>
+
+<p>
+  <strong>Turma:</strong>
+  <%= @estudante.turma.nome %>
+</p>
+
+<%= link_to 'Edit', edit_estudante_path(@estudante) %> |
+<%= link_to 'Back', estudantes_path %>
