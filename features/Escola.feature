@@ -18,3 +18,8 @@ Feature: Escola
     When Eu faco o cadastro de uma escola com o nome "" e cpf do diretor ""
     Then Eu vejo '5' mensagens de erro
 
+  Scenario: Atualizar o nome de uma escola corretamente
+    Given Eu estou na pagina de listagem de escolas
+    And Eu clico para editar a escola de nome "Escola1"
+    When Eu insiro o novo nome "EscolaAtt1" e clico para atualizar a escola
+    Then Eu vejo que o nome da escola foi atualizado corretamente para "EscolaAtt1"
