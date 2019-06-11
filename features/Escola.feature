@@ -12,3 +12,9 @@ Feature: Escola
     Given Eu estou na pagina de listagem de escolas
     When Eu clico para visualizar a escola de nome "Escola1"
     Then Eu visualizo a escola de nome "Escola1"
+
+  Scenario: Tentar cadastrar uma Escola com todos os campos em branco
+    Given Eu estou na pagina de cadastro de uma nova escola
+    When Eu faco o cadastro de uma escola com o nome "" e cpf do diretor ""
+    Then Eu vejo '5' mensagens de erro
+
