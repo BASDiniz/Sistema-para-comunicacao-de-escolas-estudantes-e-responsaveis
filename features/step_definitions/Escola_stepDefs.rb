@@ -15,3 +15,31 @@ Then("Eu vejo que a escola com o nome {string} foi cadastrada corretamente") do 
   expect(page).to have_content(string)
 end
 
+Given("Eu estou na pagina de listagem de escolas") do
+  visit escolas_path
+  expect(page).to have_content("Escolas")
+end
+
+When("Eu clico para visualizar a escola de nome {string}") do |string|
+  click_link 'New Escola'
+  fill_in 'escola[nome]', :with => string
+  fill_in 'escola[cpfDoDiretor]', :with => '12345678910'
+  click_button 'Create Escola'
+  click_link 'Back'
+  click_link 'Show'
+end
+
+Then("Eu visualizo a escola de nome {string}") do |string|
+  expect(page).to have_content(string)
+end
+
+When("Eu faco o cadastro de uma escola com o nome {string} e cpf do diretor {string}") do |nome, cpf|
+  fill_in 'escola[nome]', :with => nome
+  fill_in 'escola[cpfDoDiretor]', :with => cpf
+  click_button 'Create Escola'
+end
+
+Then("Eu vejo {string} mensagens de erro") do |string|
+  assert_selector('div#error_explanation')
+  expect(page).to have_content string
+end
