@@ -24,9 +24,17 @@ class AnosController < ApplicationController
   # POST /anos
   # POST /anos.json
   def create
-    @escola = Escola.find(params[:escola_id])
-    @ano = @escola.anos.create(ano_params)
-    redirect_to escola_path(@escola)
+    @ano = Ano.new(ano_params)
+
+    respond_to do |format|
+      if @ano.save
+        format.html { redirect_to @ano, notice: 'Ano was successfully created.' }
+        format.json { render :show, status: :created, location: @ano }
+      else
+        format.html { render :new }
+        format.json { render json: @ano.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /anos/1

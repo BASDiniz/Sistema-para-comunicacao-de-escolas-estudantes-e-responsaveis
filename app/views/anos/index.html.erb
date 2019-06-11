@@ -17,7 +17,7 @@
       <tr>
         <td><%= ano.nome %></td>
         <td><%= ano.turno %></td>
-        <td><%= ano.escola %></td>
+        <td><%= ano.escola.nome %></td>
         <td><%= link_to 'Show', ano %></td>
         <td><%= link_to 'Edit', edit_ano_path(ano) %></td>
         <td><%= link_to 'Destroy', ano, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%#= link_to 'New Ano', new_ano_path %>
+<%= link_to 'New Ano', new_ano_path %>

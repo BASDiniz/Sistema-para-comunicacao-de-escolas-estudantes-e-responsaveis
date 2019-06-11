@@ -1,4 +1,16 @@
-<%= form_with(model: [@escola, @escola.anos.build], local: true) do |form| %>
+<%= form_with(model: ano, local: true) do |form| %>
+  <% if ano.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ano.errors.count, "error") %> prohibited this escola from being saved:</h2>
+
+      <ul>
+        <% ano.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= form.label :nome %>
     <%= select("ano", "nome", ['1ª', '2ª', '3ª', '4ª', '5ª', '6ª', '7ª', '8ª', '1º', '2º', '3º'], {include_blank: true}) %>
@@ -11,10 +23,10 @@
 
   </div>
 
-<!--  <div class="field">-->
-    <%#= form.label :escola_id %>
-    <%#= form.text_field :escola_id, id: :ano_escola_id %>
-<!--  </div>-->
+  <div class="field">
+    <%= form.label :escola_id %>
+    <%= form.collection_select(:escola_id, Escola.all, :id, :nome, {include_blank: true}) %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

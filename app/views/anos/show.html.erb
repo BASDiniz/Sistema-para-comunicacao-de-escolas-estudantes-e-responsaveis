@@ -12,8 +12,8 @@
 
 <p>
   <strong>Escola:</strong>
-  <%= @ano.escola %>
+  <%= @ano.escola.nome %>
 </p>
 
-<!--<%#= link_to 'Edit', edit_ano_path(@ano) %> |-->
-<%#= link_to 'Back', anos_path %>
+<%= link_to 'Edit', edit_ano_path(@ano) %> |
+<%= link_to 'Back', anos_path %>
