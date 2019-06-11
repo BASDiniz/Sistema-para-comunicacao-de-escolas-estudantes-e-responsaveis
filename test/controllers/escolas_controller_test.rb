@@ -15,6 +15,14 @@ class EscolasControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should create escola" do
+    assert_difference('Escola.count') do
+      post escolas_url, params: { escola: { cpfDoDiretor: @escola.cpfDoDiretor, nome: @escola.nome } }
+    end
+
+    assert_redirected_to escola_url(Escola.last)
+  end
+
   test "should show escola" do
     get escola_url(@escola)
     assert_response :success
@@ -23,6 +31,11 @@ class EscolasControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_escola_url(@escola)
     assert_response :success
+  end
+
+  test "should update escola" do
+    patch escola_url(@escola), params: { escola: { cpfDoDiretor: @escola.cpfDoDiretor, nome: @escola.nome } }
+    assert_redirected_to escola_url(@escola)
   end
 
   test "should destroy escola" do

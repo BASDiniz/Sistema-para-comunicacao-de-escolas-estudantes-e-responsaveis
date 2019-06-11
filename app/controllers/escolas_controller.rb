@@ -69,6 +69,6 @@ class EscolasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def escola_params
-      params.require(:escola).permit(:nome, :cpf_do_administrador, :numero_de_estudantes, :numero_de_series, :numero_de_turmas, :numero_de_professores)
+      params.require(:escola).permit(:nome, :cpfDoDiretor)
     end
 end

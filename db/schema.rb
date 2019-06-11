@@ -10,24 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190528064438) do
+ActiveRecord::Schema.define(version: 20190611205249) do
+
+  create_table "anos", force: :cascade do |t|
+    t.string "nome"
+    t.string "turno"
+    t.integer "escola_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["escola_id"], name: "index_anos_on_escola_id"
+  end
 
   create_table "escolas", force: :cascade do |t|
     t.string "nome"
-    t.string "cpf_do_administrador"
-    t.integer "numero_de_estudantes"
-    t.integer "numero_de_series"
-    t.integer "numero_de_turmas"
-    t.integer "numero_de_professores"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "estudantes", force: :cascade do |t|
-    t.string "nome"
-    t.string "cpf"
-    t.string "serie"
-    t.string "turma"
+    t.string "cpfDoDiretor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
