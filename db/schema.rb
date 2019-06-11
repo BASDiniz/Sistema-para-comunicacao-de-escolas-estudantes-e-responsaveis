@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190611205249) do
+ActiveRecord::Schema.define(version: 20190611223215) do
 
   create_table "anos", force: :cascade do |t|
     t.string "nome"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20190611205249) do
     t.string "cpfDoDiretor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "turmas", force: :cascade do |t|
+    t.string "nome"
+    t.integer "ano_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ano_id"], name: "index_turmas_on_ano_id"
   end
 
 end
