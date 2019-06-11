@@ -1,0 +1,22 @@
+<%= form_with(model: [@escola, @escola.anos.build], local: true) do |form| %>
+  <div class="field">
+    <%= form.label :nome %>
+    <%= select("ano", "nome", ['1ª', '2ª', '3ª', '4ª', '5ª', '6ª', '7ª', '8ª', '1º', '2º', '3º'], {include_blank: true}) %>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :turno %>
+    <%= select("ano", "turno", ['Manhã', 'Tarde', 'Noite'], {include_blank: true}) %>
+
+  </div>
+
+<!--  <div class="field">-->
+    <%#= form.label :escola_id %>
+    <%#= form.text_field :escola_id, id: :ano_escola_id %>
+<!--  </div>-->
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

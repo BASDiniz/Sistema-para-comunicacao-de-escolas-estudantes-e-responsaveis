@@ -1,0 +1,2 @@
+module AnosHelper
+end

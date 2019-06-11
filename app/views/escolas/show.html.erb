@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @escola.nome %>
+</p>
+
+<p>
+  <strong>CPF do diretor:</strong>
+  <%= @escola.cpfDoDiretor %>
+</p>
+
+<h2>Anos</h2>
+<%= render @escola.anos %>
+
+<h2>Adicionar ano:</h2>
+<%= render 'anos/form' %>
+
+<%= link_to 'Edit', edit_escola_path(@escola) %> |
+<%= link_to 'Back', escolas_path %>
