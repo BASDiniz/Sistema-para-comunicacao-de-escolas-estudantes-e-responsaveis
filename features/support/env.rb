@@ -10,5 +10,5 @@ DatabaseCleaner.strategy = :truncation
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
 Before do
-    DatabaseCleaner.clean
+  DatabaseCleaner.clean
 end
