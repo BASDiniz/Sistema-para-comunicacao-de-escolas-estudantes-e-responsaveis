@@ -25,3 +25,9 @@ Feature: Estudante
     And Eu preencho o campo de nome com 'Fulano', o de cpf com '' e o de turma com 'A'
     When Eu clico no botao para cadastrar um novo estudante
     Then Eu vejo uma mensagem de erro "Cpf can't be blank"
+
+  Scenario: Cadastrar um Estudante preenchendo o nome com menos de 3 caracteres
+    Given Eu estou na pagina de cadastro de um novo estudante
+    And Eu preencho o campo de nome com 'Fu', o de cpf com '12345678901' e o de turma com 'A'
+    When Eu clico no botao para cadastrar um novo estudante
+    Then Eu vejo uma mensagem de erro "Nome is too short (minimum is 3 characters)"
