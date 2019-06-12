@@ -13,3 +13,9 @@ Feature: Estudante
     Given Eu estou na pagina de listagem de todos os estudantes
     When Eu clico para visualizar o estudante que possui o cpf '12345678901'
     Then Eu vejo o estudante que possui o cpf '12345678901'
+
+  Scenario: Atualizar a turma de um Estudante corretamente
+    Given Eu estou na pagina de listagem de todos os estudantes
+    And Eu clico para editar o estudante que possui cpf '12345678901'
+    When Eu preencho o campo de turma com 'A' e clico para salvar as alteracoes
+    Then Eu vejo que a turma do estudante de cpf '12345678901' foi atualizada corretamente para 'A'
