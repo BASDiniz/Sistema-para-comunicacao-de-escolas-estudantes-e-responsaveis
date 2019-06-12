@@ -65,7 +65,7 @@ Given("Eu estou na pagina de cadastro de uma nova turma da escola") do
     visit 'turmas/new'
 end
 
-When("Eu faco o cadastro de uma turma com o nome {string}") do |string|
+When("Eu tento fazer o cadastro de uma turma com o nome {string}") do |string|
     visit root_path
     visit 'escolas/new'
     fill_in 'escola_nome', :with => 'UAG'
@@ -94,7 +94,7 @@ Given("Eu estou na pagina de cadastro de uma turma da escola") do
     visit 'turmas/new'
 end
 
-When("Eu faco o cadastro de uma turma com o ano {string}") do |string|
+When("Eu tento fazer o cadastro de uma turma com o ano {string}") do |string|
     visit root_path
     visit 'escolas/new'
     fill_in 'escola_nome', :with => 'UAG'
