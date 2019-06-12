@@ -7,4 +7,11 @@ class AnoTest < ActiveSupport::TestCase
     anoTeste = Ano.new(nome:'1°',turno:'Tarde',escola: escolaTeste)
     assert anoTeste.save
   end
+
+  test "Nao deve ser possivel criar um ano sem turno" do
+    escolaTeste = Escola.new(nome:'UAG',cpfDoDiretor: '70378876414')
+    escolaTeste.save
+    anoTeste = Ano.new(nome:'1°',escola: escolaTeste)
+    assert_not anoTeste.save
+  end
 end
