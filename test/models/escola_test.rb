@@ -10,4 +10,9 @@ class EscolaTest < ActiveSupport::TestCase
     escolaTeste1 = Escola.new(nome: 'EscolaTeste',cpfDoDiretor: '1234567')
     assert_not escolaTeste1.save,"Salvou a escola com cpf de adm invalido"
   end
+
+  test 'Nao deve ser possivel cadastrar escola com todos os campos em branco' do
+    escolaTeste3 = Escola.new()
+    assert_not escolaTeste3.save, 'Salvou escola com campos em branco'
+  end
 end
