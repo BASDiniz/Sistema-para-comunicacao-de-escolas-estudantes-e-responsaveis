@@ -15,12 +15,12 @@ Feature: Turma
 
   Scenario: Tentar cadastrar uma Turma com o nome em branco
     Given Eu estou na pagina de cadastro de uma nova turma da escola
-    When Eu faco o cadastro de uma turma com o nome ""
+    When Eu tento fazer o cadastro de uma turma com o nome ""
     Then Eu vejo "1" mensagem de erro referente a turma
 
   Scenario: Tentar cadastrar uma Turma com o ano em branco
     Given Eu estou na pagina de cadastro de uma turma da escola
-    When Eu faco o cadastro de uma turma com o ano ""
+    When Eu tento fazer o cadastro de uma turma com o ano ""
     Then Eu vejo "1" mensagem de erro sobre a turma
 
   Scenario: Deletar uma turma corretamente
