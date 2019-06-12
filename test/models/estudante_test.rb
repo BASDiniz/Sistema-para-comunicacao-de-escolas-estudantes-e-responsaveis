@@ -9,4 +9,11 @@ class EstudanteTest < ActiveSupport::TestCase
     estudante = Estudante.new nome: 'Bruno', cpf: '', turma: turmaTeste
     assert_not estudante.save
   end
+
+  test 'Nao deve ser possivel salvar um estudante com todos os campos em branco' do
+    escolaTeste = Escola.new(nome:'UAG',cpfDoDiretor: '70378876414')
+    escolaTeste.save
+    estudante = Estudante.new nome: '', cpf: ''
+    assert_not estudante.save
+  end
 end
