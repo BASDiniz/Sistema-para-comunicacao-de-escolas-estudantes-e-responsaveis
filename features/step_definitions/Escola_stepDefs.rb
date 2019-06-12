@@ -43,3 +43,35 @@ Then("Eu vejo {string} mensagens de erro") do |string|
   assert_selector('div#error_explanation')
   expect(page).to have_content string
 end
+
+Given("Eu clico para editar a escola de nome {string}") do |string|
+  click_link 'New Escola'
+  fill_in 'escola[nome]', :with => string
+  fill_in 'escola[cpfDoDiretor]', :with => '12345678910'
+  click_button 'Create Escola'
+  click_link 'Back'
+  click_link 'Edit'
+end
+
+When("Eu insiro o novo nome {string} e clico para atualizar a escola") do |string|
+  fill_in 'escola[nome]', :with => string
+  click_button 'Update Escola'
+end
+
+Then("Eu vejo que o nome da escola foi atualizado corretamente para {string}") do |string|
+  expect(page).to have_content string
+end
+
+When("Eu clico para apagar a escola de nome {string}") do |string|
+  click_link 'New Escola'
+  fill_in 'escola[nome]', :with => string
+  fill_in 'escola[cpfDoDiretor]', :with => '12345678910'
+  click_button 'Create Escola'
+  click_link 'Back'
+  click_link 'Destroy'
+end
+
+Then("Eu confirmo a acao e vejo que a escola de nome {string} foi apagada") do |string|
+  expect(page).to have_no_content(string)
+  expect(page).to have_content('destroyed')
+end
