@@ -1,24 +1,16 @@
-# README
+# Sitema para comunicação de Escolas/Estudantes/Responsáveis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Disciplina
+> Engenharia de Software (2019.1)
 
-Things you may want to cover:
+## Descrição do Projeto
+  O projeto se trata de um meio de comunicação entre escola/estudantes/responsáveis.
+  A aplicação está focada em facilitar o meio de comunicação entre instituições educacionais com os responsáveis e com os alunos, por meio de uma plataforma virtual.
 
-* Ruby version
 
-* System dependencies
+## Alunos
+> Erik Jhonatta da Silva Matias ([ErikJhonatta](https://github.com/ErikJhonatta))
 
-* Configuration
+> Bruno Araújo Soares Diniz ([BASDiniz](https://github.com/BASDiniz))
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> Éverton Vieira Brito ([EvertonVB](https://github.com/EvertonVB))
