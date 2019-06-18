@@ -148,5 +148,6 @@ When("Eu deleto a turma de nome {string}") do |string|
 end
 
 Then("Eu vejo que a turma de nome {string} foi deletada") do |string|
+    expect(page).to_not have_content(/" #{string} "/i)
     expect(page).to have_content("successfully")
 end
