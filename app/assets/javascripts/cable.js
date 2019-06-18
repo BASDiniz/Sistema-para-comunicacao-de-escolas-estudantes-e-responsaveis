@@ -5,9 +5,12 @@
 //= require_self
 //= require_tree ./channels
 
+import * as ActionCable
+    from "../../../../../../../../RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actioncable-5.1.7/lib/assets/compiled/action_cable";
+
 (function() {
   this.App || (this.App = {});
 
-  App.cable = ActionCable.createConsumer();
+  App.cable = ActionCable.createConsumer("ws://cable.example.com");
 
 }).call(this);

@@ -64,7 +64,7 @@ class AnosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ano
-      @ano = Ano.find(params[:id])
+      @ano = Ano.unscoped.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

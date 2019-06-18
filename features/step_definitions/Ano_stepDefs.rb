@@ -117,5 +117,6 @@ When("Eu deleto o ano de nome {string}") do |string|
 end
 
 Then("Eu vejo que o Ano de nome {string} foi deletado") do |string|
+    expect(page).to_not have_content(string)
     expect(page).to have_content('successfully')
 end
