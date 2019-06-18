@@ -11,6 +11,6 @@ import * as ActionCable
 (function() {
   this.App || (this.App = {});
 
-  App.cable = ActionCable.createConsumer();
+  App.cable = ActionCable.createConsumer("ws://cable.example.com");
 
 }).call(this);
