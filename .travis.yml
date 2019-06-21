@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+  - 2.3.3
+before_install:
+  - gem update --system
+  - gem install -v 2.0.1 bundler
+  - bundle update --bundler
+script:
+  - bundle exec rake db:create:all
+  - bundle exec rake db:migrate RAILS_ENV=test
+  - ruby -Itest test/models/ano_test.rb
+  - ruby -Itest test/models/escola_test.rb
+  - ruby -Itest test/models/estudante_test.rb
+  - ruby -Itest test/models/turma_test.rb
+  - ruby -S bundle exec cucumber
+
+services:
+  - postgresql
