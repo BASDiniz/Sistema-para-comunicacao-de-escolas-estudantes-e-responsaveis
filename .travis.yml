@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+  - 2.3.3
+
+script:
+  - bundle exec rake db:create:all
+  - bundle exec rake db:migrate RAILS_ENV=test
+  - ruby -Itest test/models/ano_test.rb
+  - ruby -Itest test/models/escola_test.rb
+  - ruby -Itest test/models/estudante_test.rb
+  - ruby -Itest test/models/turma_test.rb
+  - ruby -S bundle exec cucumber --profile default
+
+services:
+  - postgresql
