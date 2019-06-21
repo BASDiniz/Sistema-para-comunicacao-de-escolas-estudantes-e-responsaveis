@@ -12,7 +12,7 @@ script:
   - ruby -Itest test/models/escola_test.rb
   - ruby -Itest test/models/estudante_test.rb
   - ruby -Itest test/models/turma_test.rb
-  - ruby -S bundle exec cucumber --profile default
+  - ruby -S bundle exec cucumber
 
 services:
   - postgresql
